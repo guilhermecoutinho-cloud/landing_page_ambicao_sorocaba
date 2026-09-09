@@ -57,7 +57,7 @@ const AMBICAO_CONFIG = {
   // Fotos e Recursos Visuais (Substitua pelos caminhos dos arquivos reais quando disponíveis)
   imagens: {
     logo: "id/Logo.png",
-    heroDestaque: "", // ex: "assets/images/hero-speakers.png"
+    heroDestaque: "id/palestrantes juntos.png",
     videoThumbnail: "", // ex: "assets/images/video-thumb.jpg"
     lilianCarmo: "",  // ex: "assets/images/lilian-carmo.png"
     atilaAbreu: "",   // ex: "assets/images/atila-abreu.png"
