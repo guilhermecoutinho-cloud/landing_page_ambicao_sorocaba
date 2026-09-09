@@ -536,9 +536,9 @@ h1, h2, h3, h4, .headline-display {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.15fr 0.95fr;
-  gap: clamp(36px, 5vw, 64px);
-  align-items: center;
+  grid-template-columns: 1fr 1.1fr;
+  gap: clamp(32px, 4.5vw, 64px);
+  align-items: flex-end;
   position: relative;
   z-index: 1;
 }
@@ -749,107 +749,74 @@ h1, h2, h3, h4, .headline-display {
 }
 
 /* ==========================================================================
-   HERO SPEAKERS PORTAL COMPOSITION (Reference Image 1)
+   HERO SPEAKERS GRAND VISUAL (Reference Image 2 - No Card, Full Right Integration)
    ========================================================================== */
 
 .hero-speakers-stage {
   position: relative;
   width: 100%;
-  min-height: 520px;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
+  align-self: flex-end;
 }
 
-/* Golden Portal Arch in background */
-.hero-portal-bg {
+/* Golden Halo Ambient Light behind Speakers */
+.hero-speakers-glow {
   position: absolute;
-  top: 50%;
+  top: 25%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  width: 90%;
-  height: 90%;
-  background: radial-gradient(ellipse at center, rgba(212, 175, 55, 0.15) 0%, rgba(18, 15, 12, 0) 70%);
-  border-radius: 50%;
-  filter: blur(40px);
+  transform: translate(-50%, -25%);
+  width: 125%;
+  height: 95%;
+  background: radial-gradient(ellipse at 50% 35%, rgba(212, 175, 55, 0.28) 0%, rgba(212, 175, 55, 0.08) 45%, transparent 72%);
   pointer-events: none;
+  z-index: 0;
+  filter: blur(48px);
 }
 
-.hero-stage-card {
+/* Architectural Luxury Gold Chevron (Inspired by Reference 2) */
+.hero-speakers-chevron {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 540px;
+  height: 90%;
+  background: 
+    linear-gradient(180deg, rgba(212, 175, 55, 0.18) 0%, rgba(212, 175, 55, 0.03) 65%, transparent 100%),
+    repeating-linear-gradient(90deg, transparent 0, transparent 48px, rgba(212, 175, 55, 0.05) 48px, rgba(212, 175, 55, 0.05) 49px);
+  clip-path: polygon(50% 0%, 100% 30%, 100% 100%, 0% 100%, 0% 30%);
+  border-top: 1px solid rgba(212, 175, 55, 0.45);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-speakers-wrapper {
   position: relative;
   width: 100%;
-  max-width: 480px;
-  aspect-ratio: 4 / 4.6;
-  border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid var(--border-gold-subtle);
-  background: #080706;
-  box-shadow: var(--shadow-elevated);
+  max-width: 660px;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 32px;
-}
-
-.hero-stage-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-  z-index: 1;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.hero-stage-card:hover .hero-stage-img {
-  transform: scale(1.03);
-}
-
-.hero-stage-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: 
-    linear-gradient(180deg, transparent 40%, rgba(8, 7, 6, 0.75) 70%, rgba(8, 7, 6, 0.96) 95%),
-    radial-gradient(circle at 50% 30%, rgba(212, 175, 55, 0.12) 0%, transparent 65%);
-  pointer-events: none;
+  justify-content: center;
+  align-items: flex-end;
   z-index: 2;
 }
 
-.hero-stage-roster {
-  position: relative;
-  z-index: 3;
+.hero-speakers-grand-img {
+  width: 100%;
+  max-width: 660px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.85));
+  -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.hero-stage-tag {
-  display: inline-block;
-  font-family: var(--font-telemetry);
-  font-size: 0.6875rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--color-gold-light);
-  margin-bottom: 8px;
-}
-
-.hero-stage-names {
-  font-size: clamp(1.25rem, 2vw, 1.65rem);
-  font-weight: 800;
-  color: #FFFFFF;
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
-  line-height: 1.25;
-  margin-bottom: 8px;
-}
-
-.hero-stage-desc {
-  font-size: 0.8125rem;
-  color: var(--text-secondary);
-  line-height: 1.5;
+.hero-speakers-wrapper:hover .hero-speakers-grand-img {
+  transform: scale(1.02);
 }
 
 /* ==========================================================================
@@ -1938,7 +1905,8 @@ h1, h2, h3, h4, .headline-display {
 @media (max-width: 1024px) {
   .hero-grid {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 48px;
+    align-items: center;
   }
 
   .form-card {
@@ -1946,7 +1914,9 @@ h1, h2, h3, h4, .headline-display {
   }
 
   .hero-speakers-stage {
-    min-height: 440px;
+    min-height: auto;
+    max-width: 520px;
+    margin: 0 auto;
   }
 
   .pillars-grid {
