@@ -1,0 +1,14 @@
+# Dependências e Cache
+node_modules/
+npm-debug.log*
+
+# Sistema Operacional
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# IDEs e Editores
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
