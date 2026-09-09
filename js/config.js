@@ -57,11 +57,11 @@ const AMBICAO_CONFIG = {
   // Fotos e Recursos Visuais (Substitua pelos caminhos dos arquivos reais quando disponíveis)
   imagens: {
     logo: "id/Logo.png",
-    heroDestaque: "id/palestrantes_hero_blended.png",
+    heroDestaque: "id/palestrantes juntos.png",
     videoThumbnail: "", // ex: "assets/images/video-thumb.jpg"
-    lilianCarmo: "",  // ex: "assets/images/lilian-carmo.png"
-    atilaAbreu: "",   // ex: "assets/images/atila-abreu.png"
-    lasaroDoCarmo: "",// ex: "assets/images/lasaro-do-carmo.png"
+    lilianCarmo: "id/lilian carmo.jpg",
+    atilaAbreu: "id/atila-abreu.jpg",
+    lasaroDoCarmo: "id/lasaro do carmo.jpeg",
     experiencias: {
       pitStop: "",    // ex: "assets/images/pitstop.jpg"
       kart: "",       // ex: "assets/images/kart.jpg"
